@@ -165,7 +165,6 @@ class MainFragment : Fragment() {
             }
         } else showToast(getString(R.string.error_null_user_response))
     }
-
     
     override fun onDestroy() {
         super.onDestroy()
