@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".screen.main.MainFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/figma_light_grey">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/main_card_history"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/card_view_history_height"
+            android:layout_marginHorizontal="@dimen/app_margin"
+            android:layout_marginTop="@dimen/history_card_margin_top"
+            android:layout_marginBottom="@dimen/history_card_margin_bottom"
+            app:cardCornerRadius="@dimen/app_radius"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_gbp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/main_curtain_history"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:translationZ="@dimen/curtain_translation_z"
+                    android:src="@color/figma_white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/text_history"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/history_text_margin_start"
+                    android:layout_marginTop="@dimen/history_text_margin_top"
+                    android:layout_marginEnd="@dimen/history_text_margin_end"
+                    android:fontFamily="@font/roboto"
+                    android:text="@string/history_text"
+                    android:textColor="@color/figma_black"
+                    android:textSize="@dimen/history_text_size"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_history"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_history"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/history_recycler_height"
+                    android:layout_marginTop="@dimen/history_recycler_margin_top"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/text_history" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+        android:id="@+id/card_eur"
+            style="@style/currencyButton"
+        app:cardCornerRadius="@dimen/app_radius"
+        app:layout_constraintEnd_toStartOf="@+id/card_rub"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/card_gbp"
+        app:layout_constraintTop_toTopOf="@+id/card_gbp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/eur_symbol"
+                style="@style/textViewCurrencySymbol"
+                android:text="@string/text_currency_symbol"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/eur_text"
+                android:text="@string/currency_eur_text"
+                style="@style/textViewCurrencyText"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/eur_symbol" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_rub"
+        style="@style/currencyButton"
+        android:layout_marginEnd="16dp"
+        app:cardCornerRadius="@dimen/app_radius"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/card_gbp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/rub_symbol"
+                style="@style/textViewCurrencySymbol"
+                android:text="@string/rub_text_symbol"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/rub_text"
+                style="@style/textViewCurrencyText"
+                android:text="@string/rub_currency_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rub_symbol" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+    android:id="@+id/main_info_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/card_view_info_margin_top"
+    app:cardCornerRadius="@dimen/app_radius"
+    android:layout_marginHorizontal="@dimen/app_margin"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/main_curtain_card_info"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:translationZ="@dimen/curtain_translation_z"
+            android:src="@color/figma_white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/main_icon_card"
+            android:layout_width="@dimen/icon_card_width"
+            android:layout_height="@dimen/icon_card_height"
+            android:layout_marginStart="@dimen/icon_card_margin_start"
+            android:src="@drawable/ic_visa"
+            app:layout_constraintBottom_toBottomOf="@+id/main_card_number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/main_card_number"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/main_card_number"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/card_number_height"
+            android:layout_marginStart="@dimen/card_number_margin_start"
+            android:layout_marginTop="@dimen/card_number_margin_top"
+            android:layout_marginEnd="@dimen/card_number_margin_end"
+            android:fontFamily="@font/roboto"
+            android:text="@string/card_number_default_text"
+            android:textColor="@color/figma_black"
+            android:textSize="@dimen/card_number_text_size"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/main_icon_card"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/image_Person"
+            android:layout_width="@dimen/image_person_weight"
+            android:layout_height="@dimen/image_person_height"
+            android:layout_marginStart="@dimen/card_info_margin"
+            android:src="@drawable/ic_person"
+            app:layout_constraintBottom_toBottomOf="@+id/main_person_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/main_person_name"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/main_person_name"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/person_name_height"
+            android:layout_marginStart="@dimen/person_name_margin_start"
+            android:layout_marginTop="@dimen/person_name_margin_top"
+            android:layout_marginEnd="@dimen/person_name_margin_end"
+            android:fontFamily="@font/roboto"
+            android:text="@string/person_name_text"
+            android:textAlignment="textStart"
+            android:textColor="@color/figma_text_grey"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toStartOf="@+id/main_text_valid"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/image_Person"
+            app:layout_constraintTop_toBottomOf="@+id/main_card_number" />
+
+        <TextView
+            android:id="@+id/text_valid"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/text_valid_height"
+            android:layout_marginTop="@dimen/text_valid_margin_top"
+            android:layout_marginEnd="@dimen/card_info_margin"
+            android:fontFamily="@font/roboto"
+            android:text="@string/text_valid_text"
+            android:textColor="@color/figma_text_grey"
+            android:textSize="@dimen/text_valid_size"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/main_text_valid"
+            app:layout_constraintTop_toBottomOf="@+id/main_card_number" />
+
+        <TextView
+            android:id="@+id/main_text_valid"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/main_valid_height"
+            android:layout_marginEnd="@dimen/main_valid_margin_end"
+            android:fontFamily="@font/roboto"
+            android:text="@string/main_valid_text"
+            android:textColor="@color/figma_text_grey"
+            android:textSize="@dimen/main_valid_size"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_valid" />
+
+        <TextView
+            android:id="@+id/main_balance_currency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/balance_currency_margin_top"
+            android:layout_marginEnd="@dimen/card_info_margin"
+            android:layout_marginBottom="@dimen/balance_currency_margin_bottom"
+            android:fontFamily="@font/roboto"
+            android:text="@string/balance_currency_text"
+            android:textColor="@color/figma_black"
+            android:textSize="@dimen/balance_currency_size"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/your_balance_text"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/image_Person"
+            app:layout_constraintTop_toBottomOf="@+id/main_person_name" />
+
+        <TextView
+            android:id="@+id/main_balance_text"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/main_balance_height"
+            android:layout_marginStart="@dimen/card_info_margin"
+            android:layout_marginEnd="@dimen/card_info_margin"
+            android:layout_marginBottom="@dimen/main_balance_margin_bottom"
+            android:fontFamily="@font/roboto"
+            android:text="@string/main_balance_text"
+            android:textColor="@color/figma_black"
+            android:textSize="@dimen/main_balance_size"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/main_balance_currency" />
+
+        <TextView
+            android:id="@+id/your_balance_text"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/your_balance_height"
+            android:layout_marginEnd="@dimen/card_info_margin"
+            android:fontFamily="@font/roboto"
+            android:text="@string/your_balance_text"
+            android:textColor="@color/figma_text_grey"
+            android:textSize="@dimen/your_balance_size"
+            app:layout_constraintBottom_toTopOf="@+id/main_balance_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/main_text_valid"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/text_change_currency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/change_currency_margin_start"
+        android:layout_marginTop="@dimen/change_currency_margin_top"
+        android:layout_marginEnd="@dimen/change_currency_margin_end"
+        android:fontFamily="@font/roboto"
+        android:textColor="@color/figma_black"
+        android:text="@string/change_currency_text"
+        android:textSize="@dimen/change_currency_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_info_card" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_gbp"
+        style="@style/currencyButton"
+        app:cardCornerRadius="@dimen/app_radius"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_change_currency">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/gbp_symbol"
+                style="@style/textViewCurrencySymbol"
+                android:text="@string/gbp_currency_symbol"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/gbp_text"
+                style="@style/textViewCurrencyText"
+                android:text="@string/gbp_currency_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gbp_symbol" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

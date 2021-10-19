@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/history_name_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/history_name_margin_start"
+        android:text="@string/history_name_text"
+        android:textColor="@color/figma_black"
+        app:layout_constraintStart_toEndOf="@+id/image_history"
+        app:layout_constraintTop_toTopOf="@+id/image_history" />
+
+    <ImageView
+        android:id="@+id/image_history"
+        android:layout_width="@dimen/history_image_width"
+        android:layout_height="@dimen/history_image_width"
+        android:layout_marginStart="@dimen/history_image_margin_start"
+        android:fontFamily="@font/roboto"
+        app:layout_constraintBottom_toBottomOf="@+id/history_balance_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/history_current_balance_text"
+        app:srcCompat="@drawable/ic_person"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/history_date_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:text="@string/history_date_text"
+        android:textColor="@color/figma_text_grey"
+        android:textSize="@dimen/history_date_size"
+        app:layout_constraintBottom_toBottomOf="@+id/image_history"
+        app:layout_constraintStart_toStartOf="@+id/history_name_text"
+        app:layout_constraintTop_toBottomOf="@+id/history_name_text" />
+
+    <TextView
+        android:id="@+id/history_current_balance_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/history_current_margin_end"
+        android:fontFamily="@font/roboto"
+        android:text="@string/history_current_text"
+        android:textColor="@color/figma_black"
+        android:textSize="@dimen/history_current_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/history_balance_text"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/history_balance_height"
+        android:layout_marginEnd="@dimen/history_balance_margin_end"
+        android:layout_marginBottom="@dimen/history_balance_margin_bottom"
+        android:fontFamily="@font/roboto"
+        android:text="@string/history_balance_text"
+        android:textColor="@color/figma_text_grey"
+        android:textSize="@dimen/history_balance_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/history_current_balance_text" />
+
+    <TextView
+        android:id="@+id/history_symbol"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/history_symbol_margin_end"
+        android:fontFamily="@font/roboto"
+        android:text=""
+        android:textColor="@color/figma_text_grey"
+        android:textSize="@dimen/history_symbol_size"
+        app:layout_constraintBottom_toBottomOf="@+id/history_current_balance_text"
+        app:layout_constraintEnd_toStartOf="@+id/history_current_balance_text"
+        app:layout_constraintTop_toTopOf="@+id/history_current_balance_text" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">PeterPartnerTest</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="error_null_cbr_response">Course search error</string>
+    <string name="error_null_user_response">Account search error</string>
+    <string name="history_text">History</string>
+    <string name="text_currency_symbol">€</string>
+    <string name="gbp_currency_symbol">£</string>
+    <string name="rub_text_symbol">₽</string>
+    <string name="currency_eur_text">EUR</string>
+    <string name="gbp_currency_text">GBP</string>
+    <string name="rub_currency_text">RUB</string>
+    <string name="card_number_default_text">0000 0000 0000 0000</string>
+    <string name="person_name_text">Firstname Lastname</string>
+    <string name="text_valid_text">VALID THIRU</string>
+    <string name="main_valid_text">00/00</string>
+    <string name="balance_currency_text">0000,00</string>
+    <string name="main_balance_text">0000.00</string>
+    <string name="your_balance_text">Your balance</string>
+    <string name="change_currency_text">Change currency</string>
+    <string name="item_card_title_text">0000 0000 0000 0000</string>
+    <string name="history_name_text">Name</string>
+    <string name="history_date_text">00/00/0000</string>
+    <string name="history_current_text">00.00</string>
+    <string name="history_balance_text">TextView</string>
+    <string name="menu_cards">Мои карты</string>
+    <string name="title">Главная</string>
+    <string name="toolbar_title_main">Главная</string>
+    <string name="toolbar_title_cards">Мои карты</string>
+    <string name="internet_error_string">Internet connection error</string>
+</resources>
